@@ -3,27 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="HealthyBite — fresh, chef-crafted meals delivered to your door. Eat clean, feel great, no cooking required." />
-  <title>HealthyBite — Fresh Meals, Delivered</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <meta name="description" content="Kuddle Super Meal by Mr Healthybite — Garlic Paprika & Jalapeño. 16g protein per pack, 100% natural, no preservatives, ready to eat in minutes. India's first retort-technology super meal." />
+  <meta property="og:title" content="Kuddle Super Meal — 16g Protein, Ready to Eat" />
+  <meta property="og:description" content="Two bold flavours: Garlic Paprika & Jalapeño. 100% natural, no preservatives, ready in minutes. Powered up with paneer." />
+  <meta property="og:type" content="website" />
+  <title>Kuddle Super Meal — Mr Healthybite | 16g Protein, Ready to Eat</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥗</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍲</text></svg>" />
 </head>
 <body>
+  <!-- Announcement -->
+  <div class="topbar">🇮🇳 1<sup>st</sup> time in India · Retort technology · 100% bacteria-free — no fridge, no cooking</div>
+
   <!-- Header -->
   <header class="site-header" id="top">
     <div class="container nav">
-      <a href="#top" class="logo" aria-label="HealthyBite home">
-        <span class="logo-mark">🥗</span>
-        <span class="logo-text">Healthy<span>Bite</span></span>
+      <a href="#top" class="logo" aria-label="Mr Healthybite home">
+        <span class="logo-mark">🍲</span>
+        <span class="logo-text"><small>Mr</small> Healthy<span>bite</span></span>
       </a>
       <nav class="nav-links" aria-label="Primary">
-        <a href="#how">How it works</a>
-        <a href="#menu">Menu</a>
-        <a href="#pricing">Pricing</a>
+        <a href="#products">Flavours</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#how">How to make</a>
+        <a href="#nutrition">Nutrition</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a href="#pricing" class="btn btn-primary btn-sm">Get started</a>
+      <a href="#products" class="btn btn-primary btn-sm">Shop flavours</a>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -35,136 +41,168 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">🌱 100% fresh, never frozen</p>
-          <h1>Eat well without<br />the hard work.</h1>
+          <p class="eyebrow"><span class="veg" aria-label="Vegetarian"></span> Kuddle Super Meal</p>
+          <h1>Two bold flavours,<br /><span class="hero-accent">one super meal.</span></h1>
           <p class="lead">
-            Chef-crafted, dietitian-approved meals delivered to your door.
-            Balanced macros, real ingredients, zero cooking. Just heat and enjoy.
+            A complete, filling meal with <strong>16g protein per pack</strong> — powered up with paneer.
+            100% natural, no preservatives, ready to eat in minutes.
           </p>
           <div class="hero-actions">
-            <a href="#pricing" class="btn btn-primary">Build my plan</a>
-            <a href="#how" class="btn btn-ghost">See how it works →</a>
+            <a href="#products" class="btn btn-primary">Explore flavours</a>
+            <a href="#how" class="btn btn-ghost">How it's made →</a>
           </div>
           <ul class="hero-badges">
-            <li>⭐ 4.9/5 from 12,000+ eaters</li>
-            <li>🚚 Free delivery over $60</li>
-            <li>♻️ Recyclable packaging</li>
+            <li>💪 16g protein / pack</li>
+            <li>⏱️ Ready in minutes</li>
+            <li>🌿 100% natural</li>
+            <li>🚫 No preservatives</li>
           </ul>
         </div>
-        <div class="hero-visual" aria-hidden="true">
-          <div class="hero-card card-1">🥑<span>Avocado Bowl</span><small>520 kcal · 28g protein</small></div>
-          <div class="hero-card card-2">🍓<span>Berry Overnight Oats</span><small>340 kcal · 14g protein</small></div>
-          <div class="hero-card card-3">🍗<span>Herb Grilled Chicken</span><small>610 kcal · 42g protein</small></div>
+        <div class="hero-visual">
+          <img src="images/jalapeno-bowl.png" alt="Kuddle Super Meal served hot with paneer and vegetables" class="hero-img"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="hero-fallback" style="display:none" aria-hidden="true">
+            <div class="fallback-emoji">🍲</div>
+            <strong>Kuddle Super Meal</strong>
+            <small>16g protein · 225g</small>
+          </div>
+          <div class="hero-tag">16g<span>protein<br/>per pack</span></div>
         </div>
       </div>
     </section>
 
-    <!-- Trust bar -->
-    <section class="trust">
-      <div class="container trust-inner">
-        <span>As featured in</span>
-        <div class="trust-logos">
-          <span>The Daily Bite</span>
-          <span>FitLife</span>
-          <span>WellNews</span>
-          <span>Foodie Weekly</span>
-          <span>UrbanEats</span>
+    <!-- Highlight strip -->
+    <section class="strip">
+      <div class="container strip-inner">
+        <span>🌿 100% Natural</span>
+        <span>🚫 No Preservatives</span>
+        <span>🧪 Retort Technology</span>
+        <span>🛡️ 100% Bacteria-Free</span>
+        <span>🫙 Free from Vegetable Oil</span>
+        <span>🔥 Ready to Eat</span>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section class="section" id="products">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Our flavours</p>
+          <h2>Pick your Kuddle Super Meal</h2>
+          <p class="section-sub">Two chef-crafted recipes, each with 16g protein and real paneer.</p>
+        </div>
+        <div class="products">
+          <!-- Garlic Paprika -->
+          <article class="product product-paprika">
+            <div class="product-media">
+              <span class="product-flag">Taste of Garlic Paprika</span>
+              <img src="images/garlic-paprika.png" alt="Kuddle Super Meal Garlic Paprika pack, 225g" loading="lazy"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='grid';" />
+              <div class="product-fallback" style="display:none" aria-hidden="true"><span>🌶️🧄</span></div>
+            </div>
+            <div class="product-body">
+              <h3>Garlic Paprika</h3>
+              <p>A warm, savoury broth with garlic and smoky paprika, loaded with paneer and garden veggies.</p>
+              <ul class="product-meta">
+                <li>💪 16g protein</li>
+                <li>⚖️ 225g</li>
+                <li><span class="veg"></span> Veg</li>
+              </ul>
+              <a href="#buy" class="btn btn-primary">Buy now</a>
+            </div>
+          </article>
+
+          <!-- Jalapeno -->
+          <article class="product product-jalapeno">
+            <div class="product-media">
+              <span class="product-flag">Taste of Jalapeño</span>
+              <img src="images/jalapeno.png" alt="Kuddle Super Meal Jalapeño pack, 225g" loading="lazy"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='grid';" />
+              <div class="product-fallback" style="display:none" aria-hidden="true"><span>🌶️🫑</span></div>
+            </div>
+            <div class="product-body">
+              <h3>Jalapeño</h3>
+              <p>A zesty green broth with a gentle jalapeño kick, packed with paneer and fresh vegetables.</p>
+              <ul class="product-meta">
+                <li>💪 16g protein</li>
+                <li>⚖️ 225g</li>
+                <li><span class="veg"></span> Veg</li>
+              </ul>
+              <a href="#buy" class="btn btn-primary">Buy now</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- How it works -->
+    <!-- Benefits -->
+    <section class="section section-alt" id="benefits">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Why you'll love it</p>
+          <h2>Everything a super meal should be</h2>
+        </div>
+        <div class="benefits">
+          <article class="benefit"><div class="benefit-ic">💪</div><h3>16g protein per pack</h3><p>Powered up with paneer to keep you full and fuelled.</p></article>
+          <article class="benefit"><div class="benefit-ic">🍽️</div><h3>Complete filling meal</h3><p>A wholesome bowl of veggies and paneer — not just a snack.</p></article>
+          <article class="benefit"><div class="benefit-ic">🌿</div><h3>100% natural, no preservatives</h3><p>Real ingredients only. Nothing artificial, ever.</p></article>
+          <article class="benefit"><div class="benefit-ic">⏱️</div><h3>Ready in minutes</h3><p>No cooking, no fridge. Just heat and eat, anywhere.</p></article>
+          <article class="benefit"><div class="benefit-ic">😋</div><h3>Tasty &amp; healthy flavours</h3><p>Bold Garlic Paprika &amp; Jalapeño tastes that actually satisfy.</p></article>
+          <article class="benefit"><div class="benefit-ic">🧪</div><h3>Retort technology</h3><p>India's first — shelf-stable and 100% bacteria-free without additives.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to make -->
     <section class="section" id="how">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">How it works</p>
-          <h2>Healthy eating in three simple steps</h2>
+          <p class="eyebrow">Ready in minutes</p>
+          <h2>Three steps to a hot meal</h2>
+          <p class="section-sub">No stove needed. No refrigeration needed.</p>
         </div>
         <div class="steps">
-          <article class="step">
-            <div class="step-num">1</div>
-            <h3>Pick your plan</h3>
-            <p>Tell us your goals and dietary preferences. We tailor a weekly menu just for you.</p>
-          </article>
-          <article class="step">
-            <div class="step-num">2</div>
-            <h3>We cook &amp; deliver</h3>
-            <p>Our chefs prepare each meal fresh and deliver it chilled, right to your door.</p>
-          </article>
-          <article class="step">
-            <div class="step-num">3</div>
-            <h3>Heat &amp; enjoy</h3>
-            <p>Ready in 3 minutes. No prep, no cleanup — just delicious, balanced food.</p>
-          </article>
+          <article class="step"><div class="step-num">1</div><h3>Tear open</h3><p>Open the pack — your meal is already cooked and sealed fresh.</p></article>
+          <article class="step"><div class="step-num">2</div><h3>Heat it up</h3><p>Microwave or drop the pouch in hot water for a couple of minutes.</p></article>
+          <article class="step"><div class="step-num">3</div><h3>Enjoy</h3><p>Pour into a bowl and dig in. Hot, hearty and high in protein.</p></article>
         </div>
       </div>
     </section>
 
-    <!-- Menu -->
-    <section class="section section-alt" id="menu">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">This week's menu</p>
-          <h2>Fresh dishes, rotating weekly</h2>
-          <p class="section-sub">Over 40 recipes designed by chefs and reviewed by dietitians.</p>
+    <!-- Paneer highlight -->
+    <section class="section section-alt">
+      <div class="container split">
+        <div class="split-media">
+          <img src="images/garlic-paprika-bowl.png" alt="Kuddle Super Meal served in a bowl with paneer and vegetables"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='grid';" />
+          <div class="split-fallback" style="display:none" aria-hidden="true"><span>🥣</span></div>
         </div>
-        <div class="menu-grid">
-          <article class="dish"><div class="dish-emoji">🥗</div><h3>Mediterranean Quinoa Bowl</h3><p>Chickpeas, feta, cucumber, lemon-tahini.</p><span class="dish-meta">480 kcal · Vegetarian</span></article>
-          <article class="dish"><div class="dish-emoji">🍜</div><h3>Miso Salmon &amp; Greens</h3><p>Wild salmon, bok choy, brown rice.</p><span class="dish-meta">560 kcal · High protein</span></article>
-          <article class="dish"><div class="dish-emoji">🌮</div><h3>Chipotle Chicken Tacos</h3><p>Grilled chicken, slaw, avocado crema.</p><span class="dish-meta">530 kcal · Gluten-free</span></article>
-          <article class="dish"><div class="dish-emoji">🍲</div><h3>Thai Coconut Curry</h3><p>Tofu, sweet potato, jasmine rice.</p><span class="dish-meta">510 kcal · Vegan</span></article>
-          <article class="dish"><div class="dish-emoji">🥩</div><h3>Steak &amp; Roasted Veg</h3><p>Grass-fed sirloin, asparagus, chimichurri.</p><span class="dish-meta">640 kcal · Keto-friendly</span></article>
-          <article class="dish"><div class="dish-emoji">🍝</div><h3>Pesto Zucchini Pasta</h3><p>Whole-wheat penne, basil pesto, pine nuts.</p><span class="dish-meta">470 kcal · Vegetarian</span></article>
+        <div class="split-copy">
+          <p class="eyebrow">⚡ Power up with paneer</p>
+          <h2>A bowl that works as hard as you do</h2>
+          <p>Every Kuddle Super Meal packs tender paneer and garden vegetables into a rich broth — free from vegetable oil and built for people who want real food, fast.</p>
+          <ul class="checks">
+            <li>Paneer-forward, 16g protein per 225g pack</li>
+            <li>Free from vegetable oil</li>
+            <li>Sealed with retort technology — no preservatives needed</li>
+            <li>100% vegetarian</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- Pricing -->
-    <section class="section" id="pricing">
+    <!-- Nutrition -->
+    <section class="section" id="nutrition">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Pricing</p>
-          <h2>Plans that fit your life</h2>
-          <p class="section-sub">No commitment. Skip, pause, or cancel anytime.</p>
+          <p class="eyebrow">The facts</p>
+          <h2>What's in every pack</h2>
         </div>
-        <div class="pricing-grid">
-          <article class="plan">
-            <h3>Starter</h3>
-            <p class="plan-price"><span>$9.99</span>/meal</p>
-            <p class="plan-desc">Perfect for trying us out.</p>
-            <ul>
-              <li>6 meals per week</li>
-              <li>Choose from 40+ recipes</li>
-              <li>Free delivery over $60</li>
-              <li>Skip anytime</li>
-            </ul>
-            <a href="#" class="btn btn-outline">Choose Starter</a>
-          </article>
-          <article class="plan plan-featured">
-            <div class="plan-badge">Most popular</div>
-            <h3>Balance</h3>
-            <p class="plan-price"><span>$8.49</span>/meal</p>
-            <p class="plan-desc">Our best value for everyday eating.</p>
-            <ul>
-              <li>12 meals per week</li>
-              <li>Choose from 40+ recipes</li>
-              <li>Free delivery, always</li>
-              <li>Priority chef picks</li>
-            </ul>
-            <a href="#" class="btn btn-primary">Choose Balance</a>
-          </article>
-          <article class="plan">
-            <h3>Family</h3>
-            <p class="plan-price"><span>$7.99</span>/meal</p>
-            <p class="plan-desc">Feed the whole household.</p>
-            <ul>
-              <li>20 meals per week</li>
-              <li>Kid-friendly options</li>
-              <li>Free delivery, always</li>
-              <li>Dedicated support</li>
-            </ul>
-            <a href="#" class="btn btn-outline">Choose Family</a>
-          </article>
+        <div class="facts">
+          <div class="fact"><span class="fact-num">16g</span><span class="fact-label">Protein per pack</span></div>
+          <div class="fact"><span class="fact-num">225g</span><span class="fact-label">Net weight (7.93 oz)</span></div>
+          <div class="fact"><span class="fact-num">0</span><span class="fact-label">Preservatives</span></div>
+          <div class="fact"><span class="fact-num">100%</span><span class="fact-label">Vegetarian</span></div>
         </div>
       </div>
     </section>
@@ -173,22 +211,13 @@
     <section class="section section-alt">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Loved by thousands</p>
-          <h2>Real people, real results</h2>
+          <p class="eyebrow">People are loving it</p>
+          <h2>Real meals, real reviews</h2>
         </div>
         <div class="quotes">
-          <figure class="quote">
-            <blockquote>"I've saved hours every week and finally eat balanced meals. The food actually tastes amazing."</blockquote>
-            <figcaption>— Priya S., Austin</figcaption>
-          </figure>
-          <figure class="quote">
-            <blockquote>"Down 14 pounds and never felt hungry. HealthyBite made eating well effortless."</blockquote>
-            <figcaption>— Marcus T., Chicago</figcaption>
-          </figure>
-          <figure class="quote">
-            <blockquote>"As a busy parent, this is a lifesaver. My kids love the tacos and I love the free time."</blockquote>
-            <figcaption>— Elena R., Seattle</figcaption>
-          </figure>
+          <figure class="quote"><blockquote>"Finally a ready-to-eat meal that's actually filling. The paneer and garlic paprika combo is delicious."</blockquote><figcaption>— Ananya, Bengaluru</figcaption></figure>
+          <figure class="quote"><blockquote>"The jalapeño one has just the right kick. 16g protein and ready in minutes — perfect for hostel life."</blockquote><figcaption>— Rohit, Pune</figcaption></figure>
+          <figure class="quote"><blockquote>"Love that it's 100% natural with no preservatives. Tastes home-cooked."</blockquote><figcaption>— Meera, Delhi</figcaption></figure>
         </div>
       </div>
     </section>
@@ -198,38 +227,27 @@
       <div class="container narrow">
         <div class="section-head">
           <p class="eyebrow">FAQ</p>
-          <h2>Questions, answered</h2>
+          <h2>Good to know</h2>
         </div>
         <div class="faq">
-          <details>
-            <summary>How is the food delivered?</summary>
-            <p>Meals arrive chilled in insulated, recyclable packaging. Just refrigerate and heat when you're ready.</p>
-          </details>
-          <details>
-            <summary>Can I customize my meals?</summary>
-            <p>Absolutely. Set your dietary preferences and allergies, and we'll only show meals that fit.</p>
-          </details>
-          <details>
-            <summary>Is there a commitment?</summary>
-            <p>None at all. Skip a week, pause, or cancel anytime from your account — no fees.</p>
-          </details>
-          <details>
-            <summary>Which areas do you deliver to?</summary>
-            <p>We currently deliver to most major metro areas across the country, with new zones added monthly.</p>
-          </details>
+          <details><summary>Does it need refrigeration?</summary><p>No. Thanks to retort technology, the meal is shelf-stable and 100% bacteria-free without any preservatives — store it at room temperature.</p></details>
+          <details><summary>How do I prepare it?</summary><p>Just heat the pouch in a microwave or in hot water for a couple of minutes, then pour into a bowl and eat. It's fully cooked already.</p></details>
+          <details><summary>Is it vegetarian?</summary><p>Yes, both flavours are 100% vegetarian and made with paneer and vegetables.</p></details>
+          <details><summary>What is retort technology?</summary><p>It's an advanced heat-sealing process that keeps food fresh and safe for long periods without preservatives or refrigeration — a first of its kind in India for meals like this.</p></details>
+          <details><summary>How much protein does it have?</summary><p>Each 225g pack delivers 16g of protein, largely from paneer.</p></details>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta">
+    <!-- Buy / CTA -->
+    <section class="cta" id="buy">
       <div class="container cta-inner">
-        <h2>Your first box, 40% off.</h2>
-        <p>Join thousands eating better with zero effort. Cancel anytime.</p>
+        <h2>Get your Kuddle Super Meal</h2>
+        <p>Be first in line. Drop your email and we'll send you where to buy plus launch offers.</p>
         <form class="cta-form" id="signup-form" novalidate>
           <label class="sr-only" for="email">Email address</label>
           <input type="email" id="email" name="email" placeholder="you@example.com" required />
-          <button type="submit" class="btn btn-primary">Claim my discount</button>
+          <button type="submit" class="btn btn-primary">Notify me</button>
         </form>
         <p class="cta-note" id="form-note" role="status"></p>
       </div>
@@ -240,30 +258,30 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a href="#top" class="logo"><span class="logo-mark">🥗</span><span class="logo-text">Healthy<span>Bite</span></span></a>
-        <p>Fresh, chef-crafted meals delivered to your door.</p>
+        <a href="#top" class="logo"><span class="logo-mark">🍲</span><span class="logo-text"><small>Mr</small> Healthy<span>bite</span></span></a>
+        <p>Kuddle Super Meal — 100% natural, ready-to-eat meals powered up with protein.</p>
       </div>
       <div class="footer-col">
-        <h4>Product</h4>
-        <a href="#menu">Menu</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#how">How it works</a>
+        <h4>Flavours</h4>
+        <a href="#products">Garlic Paprika</a>
+        <a href="#products">Jalapeño</a>
+        <a href="#nutrition">Nutrition</a>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
-        <a href="#">About</a>
-        <a href="#">Careers</a>
-        <a href="#">Blog</a>
+        <a href="#">About Mr Healthybite</a>
+        <a href="#">Contact</a>
+        <a href="#">Where to buy</a>
       </div>
       <div class="footer-col">
         <h4>Support</h4>
         <a href="#faq">FAQ</a>
-        <a href="#">Contact</a>
-        <a href="#">Delivery areas</a>
+        <a href="#">Shipping</a>
+        <a href="#">Returns</a>
       </div>
     </div>
     <div class="container footer-bottom">
-      <p>&copy; <span id="year"></span> HealthyBite. All rights reserved.</p>
+      <p>&copy; <span id="year"></span> Mr Healthybite. All rights reserved.</p>
       <p class="footer-legal"><a href="#">Privacy</a> · <a href="#">Terms</a></p>
     </div>
   </footer>
