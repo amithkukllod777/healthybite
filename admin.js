@@ -44,15 +44,16 @@ async function loadReviews(){
     const snap=await getDocs(collection(db,"reviewSubmissions"));
     const reviews=snap.docs.map(d=>({id:d.id,...d.data()})).filter(r=>r.status==="pending").sort((a,b)=>(b.createdAt?.seconds||0)-(a.createdAt?.seconds||0));
     if(!reviews.length){wrap.innerHTML="<p>No pending reviews.</p>";return}
-    wrap.innerHTML=reviews.map(r=>`<article class="media-item review-admin-card" data-review-id="${r.id}"><h3>${stars(r.rating)} <span>${esc(r.flavour||"")}</span></h3><blockquote>${esc(r.review||"")}</blockquote><p><strong>${esc(r.name||"")}</strong> · ${esc(r.city||"")}</p><p class="review-order">Order: ${esc(r.orderNumber||"Not provided")}</p><div class="review-actions"><button type="button" data-approve="${r.id}">Approve</button><button type="button" class="remove" data-reject="${r.id}">Reject</button></div></article>`).join("");
-    wrap.querySelectorAll("[data-approve]").forEach(b=>b.onclick=()=>moderate(b.dataset.approve,true,reviews.find(r=>r.id===b.dataset.approve)));
+    wrap.innerHTML=reviews.map(r=>`<article class="media-item review-admin-card" data-review-id="${r.id}"><h3>${stars(r.rating)} <span>${esc(r.flavour||"")}</span></h3><blockquote>${esc(r.review||"")}</blockquote><p><strong>${esc(r.name||"")}</strong> · ${esc(r.city||"")}</p><p class="review-order">Order: ${esc(r.orderNumber||"Not provided")}</p><div class="review-actions"><button type="button" data-approve="${r.id}">Approve</button>${r.orderNumber?`<button type="button" class="secondary" data-verify="${r.id}">Verify &amp; approve</button>`:""}<button type="button" class="remove" data-reject="${r.id}">Reject</button></div></article>`).join("");
+    wrap.querySelectorAll("[data-approve]").forEach(b=>b.onclick=()=>moderate(b.dataset.approve,true,reviews.find(r=>r.id===b.dataset.approve),false));
+    wrap.querySelectorAll("[data-verify]").forEach(b=>b.onclick=()=>moderate(b.dataset.verify,true,reviews.find(r=>r.id===b.dataset.verify),true));
     wrap.querySelectorAll("[data-reject]").forEach(b=>b.onclick=()=>moderate(b.dataset.reject,false));
   } catch { wrap.innerHTML="<p>Could not load reviews. Check Firestore rules.</p>"; }
 }
-async function moderate(id,approve,review){
+async function moderate(id,approve,review,verifiedPurchase=false){
   const status=$("#save-status"); status.textContent=approve?"Publishing review…":"Rejecting review…";
   try {
-    if(approve) await setDoc(doc(db,"publishedReviews",id),{name:review.name,city:review.city,flavour:review.flavour,rating:review.rating,review:review.review,verifiedPurchase:Boolean(review.orderNumber),publishedAt:serverTimestamp()});
+    if(approve) await setDoc(doc(db,"publishedReviews",id),{name:review.name,city:review.city,flavour:review.flavour,rating:review.rating,review:review.review,verifiedPurchase,publishedAt:serverTimestamp()});
     await deleteDoc(doc(db,"reviewSubmissions",id)); status.textContent=approve?"Review published.":"Review rejected."; await loadReviews();
   } catch { status.textContent="Action failed. Check Firestore permissions."; }
 }
