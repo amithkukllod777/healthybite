@@ -20,6 +20,7 @@ function applyMedia(data) {
     card.hidden = video.visible === false;
     const id = youtubeId(video.url);
     const holder = card.querySelector(".video-embed");
+    holder.classList.toggle("is-short", /youtube\.com\/shorts\//i.test(video.url || ""));
     if (id) {
       const iframe = document.createElement("iframe");
       iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}`;
