@@ -19,6 +19,21 @@ if (toggle && links) {
   );
 }
 
+// YouTube embeds: paste only the video ID into data-youtube-id in index.html.
+document.querySelectorAll(".video-embed[data-youtube-id]").forEach((holder) => {
+  const videoId = holder.dataset.youtubeId.trim();
+  if (!videoId) return;
+
+  const iframe = document.createElement("iframe");
+  iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}`;
+  iframe.title = holder.dataset.title || "Kuddle Super Meal video";
+  iframe.loading = "lazy";
+  iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+  iframe.referrerPolicy = "strict-origin-when-cross-origin";
+  iframe.allowFullscreen = true;
+  holder.replaceChildren(iframe);
+});
+
 // Signup form (demo — no backend)
 const form = document.getElementById("signup-form");
 const note = document.getElementById("form-note");
