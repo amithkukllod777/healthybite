@@ -217,6 +217,9 @@ img { max-width: 100%; display: block; }
 .footer-brand .logo { color: #fff; margin-bottom: .8rem; }
 .footer-brand .logo-text span { color: var(--green-500); }
 .footer-brand p { max-width: 30ch; color: #9fb4a7; }
+.brand-by { display: flex; align-items: center; gap: .7rem; margin-top: 1.1rem; }
+.brand-by span { font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; color: #9fb4a7; font-weight: 600; }
+.brand-by img { height: 46px; width: auto; display: block; }
 .footer-col h4 { color: #fff; font-size: .95rem; margin-bottom: 1rem; }
 .footer-col a { display: block; padding: .3rem 0; color: #c7d6cc; transition: color .15s; }
 .footer-col a:hover { color: #fff; }
