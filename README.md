@@ -21,11 +21,17 @@ site with plain HTML, CSS, and JavaScript (no build step), ready to deploy on **
 | `vercel.json` | Static hosting config + security headers |
 | `images/` | Product photos (see `images/README.md` for filenames) |
 
-## ⚠️ Add your product photos
+## Product images & data
 
-The page references four image files. Add them to `images/` using the exact
-filenames listed in [`images/README.md`](images/README.md). Until then, the page
-shows emoji fallbacks so it never looks broken.
+Real product photos and data are sourced from
+[nutriwow.in](https://www.nutriwow.in) and stored under `images/`:
+
+- `images/garlic-paprika/` — Garlic Paprika pack shots, lifestyle & nutrition
+- `images/jalapeno/` — Jalapeño pack shots, lifestyle & nutrition
+- each folder's `data.json` holds the full product record (price, ingredients,
+  nutrition, etc.) used to build the page.
+
+Buy buttons link to the live product pages on nutriwow.in.
 
 ## Run locally
 
