@@ -1,11 +1,27 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
-import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+import { getFirestore, doc, getDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 import { firebaseConfig, firebaseReady } from "./firebase-config.js";
 
 if (firebaseReady) {
   const db = getFirestore(initializeApp(firebaseConfig));
   const snapshot = await getDoc(doc(db, "public", "siteMedia"));
   if (snapshot.exists()) applyMedia(snapshot.data());
+  const reviews = await getDocs(collection(db, "publishedReviews"));
+  applyReviews(reviews.docs.map((item) => item.data()));
+}
+
+function applyReviews(reviews) {
+  const wrap = document.querySelector("#reviews .quotes");
+  if (!wrap || !reviews.length) return;
+  const published = reviews.sort((a,b)=>(b.publishedAt?.seconds||0)-(a.publishedAt?.seconds||0)).slice(0,6);
+  published.reverse().forEach((review) => {
+    const figure = document.createElement("figure"); figure.className="quote customer-review";
+    const rating = Math.max(1, Math.min(5, Number(review.rating)||1));
+    figure.innerHTML=`<div class="review-stars" aria-label="${rating} out of 5 stars">${"★".repeat(rating)}${"☆".repeat(5-rating)}</div><blockquote></blockquote><figcaption></figcaption>`;
+    figure.querySelector("blockquote").textContent=`“${review.review || ""}”`;
+    figure.querySelector("figcaption").textContent=`— ${review.name || "Customer"}, ${review.city || "India"}${review.flavour ? ` · ${review.flavour}` : ""}${review.verifiedPurchase ? " · Verified purchase" : ""}`;
+    wrap.prepend(figure);
+  });
 }
 
 function youtubeId(value = "") {
