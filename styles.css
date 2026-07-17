@@ -75,6 +75,7 @@ img { max-width: 100%; display: block; }
 .nav { display: flex; align-items: center; gap: 1.5rem; height: 72px; }
 .logo { display: inline-flex; align-items: center; gap: .5rem; font-weight: 800; color: var(--ink); font-size: 1.2rem; }
 .logo-img { height: 46px; width: auto; display: block; }
+.logo-mrhb { height: 56px; }
 .logo-chip { background: #fff; padding: .55rem .9rem; border-radius: 14px; box-shadow: var(--shadow-sm); }
 .logo-chip .logo-img { height: 40px; }
 .nav-links { display: flex; gap: 1.6rem; margin-left: auto; }
