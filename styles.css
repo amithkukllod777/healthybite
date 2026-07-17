@@ -73,10 +73,10 @@ img { max-width: 100%; display: block; }
 /* Header */
 .site-header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.9); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
 .nav { display: flex; align-items: center; gap: 1.5rem; height: 72px; }
-.logo { display: flex; align-items: center; gap: .5rem; font-weight: 800; color: var(--ink); font-size: 1.2rem; }
-.logo-mark { font-size: 1.4rem; }
-.logo-text small { font-size: .62em; color: var(--pink-600); font-weight: 800; vertical-align: top; margin-right: 2px; text-transform: uppercase; }
-.logo-text span { color: var(--green-600); }
+.logo { display: inline-flex; align-items: center; gap: .5rem; font-weight: 800; color: var(--ink); font-size: 1.2rem; }
+.logo-img { height: 46px; width: auto; display: block; }
+.logo-chip { background: #fff; padding: .55rem .9rem; border-radius: 14px; box-shadow: var(--shadow-sm); }
+.logo-chip .logo-img { height: 40px; }
 .nav-links { display: flex; gap: 1.6rem; margin-left: auto; }
 .nav-links a { color: var(--body); font-weight: 500; transition: color .15s; }
 .nav-links a:hover { color: var(--green-700); }
