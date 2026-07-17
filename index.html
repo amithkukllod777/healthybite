@@ -28,6 +28,8 @@
         <a href="#benefits">Benefits</a>
         <a href="#how">How to make</a>
         <a href="#nutrition">Nutrition</a>
+        <a href="#videos">Videos</a>
+        <a href="#social">Social</a>
         <a href="#gallery">Gallery</a>
         <a href="#faq">FAQ</a>
       </nav>
@@ -230,6 +232,57 @@
       </div>
     </section>
 
+    <!-- Videos: add a YouTube video ID to data-youtube-id to activate each embed. -->
+    <section class="section video-section" id="videos">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Watch &amp; discover</p>
+          <h2>See Kuddle in action</h2>
+          <p class="section-sub">From sealed pack to a warm, satisfying bowl—discover the product, preparation and ingredients.</p>
+        </div>
+        <div class="video-grid">
+          <article class="video-card" data-video-slot="0">
+            <div class="video-embed" data-youtube-id="" data-title="Meet Kuddle Super Meal">
+              <div class="video-placeholder"><span class="youtube-mark" aria-hidden="true">▶</span><strong>Video coming soon</strong><span>Meet Kuddle Super Meal</span></div>
+            </div>
+            <div class="video-copy"><h3>Meet Kuddle Super Meal</h3><p>Discover the paneer, beans, vegetables and bold flavours packed inside every 225g meal.</p></div>
+          </article>
+          <article class="video-card" data-video-slot="1">
+            <div class="video-embed" data-youtube-id="" data-title="How to prepare Kuddle">
+              <div class="video-placeholder"><span class="youtube-mark" aria-hidden="true">▶</span><strong>Video coming soon</strong><span>How to prepare Kuddle</span></div>
+            </div>
+            <div class="video-copy"><h3>Ready in a few simple steps</h3><p>See how to heat, serve and enjoy Kuddle safely whenever hunger strikes.</p></div>
+          </article>
+          <article class="video-card" data-video-slot="2">
+            <div class="video-embed" data-youtube-id="" data-title="What goes into Kuddle">
+              <div class="video-placeholder"><span class="youtube-mark" aria-hidden="true">▶</span><strong>Video coming soon</strong><span>What goes into Kuddle?</span></div>
+            </div>
+            <div class="video-copy"><h3>Inside the meal</h3><p>Take a closer look at the paneer, legumes, colourful vegetables, herbs and spices.</p></div>
+          </article>
+        </div>
+        <div class="video-channel-cta">
+          <a href="https://www.youtube.com/@mr.healthybite" class="btn btn-youtube" target="_blank" rel="noopener noreferrer" aria-label="Visit Mr. Healthybite on YouTube">
+            <span aria-hidden="true">▶</span> Visit Mr. Healthybite on YouTube
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social posts are managed from /admin.html. -->
+    <section class="section" id="social">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">From our community</p>
+          <h2>Follow the Kuddle story</h2>
+          <p class="section-sub">New flavours, quick meal ideas and behind-the-scenes moments from Mr. Healthybite.</p>
+        </div>
+        <div class="social-grid" id="social-grid">
+          <a class="social-empty" href="https://www.instagram.com/mr.healthybites" target="_blank" rel="noopener noreferrer"><strong>Instagram posts coming soon</strong><span>Follow @mr.healthybites →</span></a>
+        </div>
+        <div class="social-follow"><a href="https://www.instagram.com/mr.healthybites" class="btn btn-instagram" target="_blank" rel="noopener noreferrer">Follow on Instagram</a></div>
+      </div>
+    </section>
+
     <!-- Gallery -->
     <section class="section section-alt" id="gallery">
       <div class="container">
@@ -238,12 +291,12 @@
           <h2>Kuddle Super Meal, up close</h2>
         </div>
         <div class="gallery">
-          <figure><img src="images/garlic-paprika/04.jpg" alt="Kuddle Garlic Paprika pack with benefits and bowl" loading="lazy"></figure>
-          <figure><img src="images/jalapeno/05.jpg" alt="Kuddle Jalapeño pack with benefits and bowl" loading="lazy"></figure>
-          <figure><img src="images/garlic-paprika/01.jpg" alt="Kuddle Garlic Paprika box on a kitchen counter" loading="lazy"></figure>
-          <figure><img src="images/jalapeno/04.jpg" alt="Kuddle Jalapeño box held in hand — compact size" loading="lazy"></figure>
-          <figure><img src="images/garlic-paprika/05.jpg" alt="Enjoying a bowl of Kuddle Super Meal" loading="lazy"></figure>
-          <figure><img src="images/jalapeno/03.jpg" alt="Kuddle Jalapeño nutrition facts and ingredients" loading="lazy"></figure>
+          <figure data-gallery-slot="0"><img src="images/garlic-paprika/04.jpg" alt="Kuddle Garlic Paprika pack with benefits and bowl" loading="lazy"></figure>
+          <figure data-gallery-slot="1"><img src="images/jalapeno/05.jpg" alt="Kuddle Jalapeño pack with benefits and bowl" loading="lazy"></figure>
+          <figure data-gallery-slot="2"><img src="images/garlic-paprika/01.jpg" alt="Kuddle Garlic Paprika box on a kitchen counter" loading="lazy"></figure>
+          <figure data-gallery-slot="3"><img src="images/jalapeno/04.jpg" alt="Kuddle Jalapeño box held in hand — compact size" loading="lazy"></figure>
+          <figure data-gallery-slot="4"><img src="images/garlic-paprika/05.jpg" alt="Enjoying a bowl of Kuddle Super Meal" loading="lazy"></figure>
+          <figure data-gallery-slot="5"><img src="images/jalapeno/03.jpg" alt="Kuddle Jalapeño nutrition facts and ingredients" loading="lazy"></figure>
         </div>
       </div>
     </section>
@@ -321,6 +374,8 @@
         <h4>Customer Care</h4>
         <a href="mailto:wecare@foodondoor.com">wecare@foodondoor.com</a>
         <a href="tel:+919993883710">+91 99938 83710</a>
+        <a href="https://www.youtube.com/@mr.healthybite" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://www.instagram.com/mr.healthybites" target="_blank" rel="noopener noreferrer">Instagram</a>
       </div>
       <div class="footer-col footer-address">
         <h4>Marketed by</h4>
@@ -342,5 +397,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script type="module" src="content-loader.js"></script>
 </body>
 </html>
