@@ -38,7 +38,13 @@ function applyMedia(data) {
   const socialGrid = document.getElementById("social-grid");
   const social = (data.social || []).filter((post) => post.visible !== false).slice(0, 6);
   if (socialGrid && social.length) {
-    socialGrid.innerHTML = social.map((post) => `<a class="social-card" href="${safeUrl(post.url)}" target="_blank" rel="noopener noreferrer"><img src="${safeUrl(post.imageUrl)}" alt="${escapeHtml(post.title || "Mr. Healthybite social post")}" loading="lazy"><div><h3>${escapeHtml(post.title || "From Mr. Healthybite")}</h3><p>${escapeHtml(post.caption || "View this post on Instagram")}</p><span>View post →</span></div></a>`).join("");
+    socialGrid.innerHTML = social.map((post) => {
+      const imageUrl = safeUrl(post.imageUrl);
+      const media = imageUrl
+        ? `<img src="${imageUrl}" alt="${escapeHtml(post.title || "Mr. Healthybite social post")}" loading="lazy">`
+        : `<div class="social-media-placeholder" aria-hidden="true"><span>◎</span><strong>@mr.healthybites</strong></div>`;
+      return `<a class="social-card" href="${safeUrl(post.url)}" target="_blank" rel="noopener noreferrer">${media}<div><h3>${escapeHtml(post.title || "From Mr. Healthybite")}</h3><p>${escapeHtml(post.caption || "View this post on Instagram")}</p><span>View post →</span></div></a>`;
+    }).join("");
   }
 
   (data.gallery || []).slice(0, 6).forEach((item, index) => {
