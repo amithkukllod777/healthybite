@@ -61,6 +61,13 @@ function applyMedia(data) {
         : `<div class="social-media-placeholder" aria-hidden="true"><span>◎</span><strong>@mr.healthybites</strong></div>`;
       return `<a class="social-card" href="${safeUrl(post.url)}" target="_blank" rel="noopener noreferrer">${media}<div><h3>${escapeHtml(post.title || "From Mr. Healthybite")}</h3><p>${escapeHtml(post.caption || "View this post on Instagram")}</p><span>View post →</span></div></a>`;
     }).join("");
+    socialGrid.querySelectorAll("img").forEach((img) => img.addEventListener("error", () => {
+      const fallback = document.createElement("div");
+      fallback.className = "social-media-placeholder";
+      fallback.setAttribute("aria-hidden", "true");
+      fallback.innerHTML = "<span>◎</span><strong>@mr.healthybites</strong>";
+      img.replaceWith(fallback);
+    }, { once: true }));
   }
 
   (data.gallery || []).slice(0, 6).forEach((item, index) => {
