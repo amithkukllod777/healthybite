@@ -25,13 +25,51 @@ document.querySelectorAll(".video-embed[data-youtube-id]").forEach((holder) => {
   if (!videoId) return;
 
   const iframe = document.createElement("iframe");
-  iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}`;
+  iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}?enablejsapi=1&playsinline=1&origin=${encodeURIComponent(location.origin)}`;
   iframe.title = holder.dataset.title || "Kuddle Super Meal video";
   iframe.loading = "lazy";
   iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
   iframe.referrerPolicy = "strict-origin-when-cross-origin";
   iframe.allowFullscreen = true;
   holder.replaceChildren(iframe);
+});
+
+// Keep only one YouTube video playing at a time.
+const youtubePlayers = new Map();
+const coordinatedFrames = new WeakSet();
+
+function coordinateYoutubeFrame(iframe) {
+  if (!window.YT?.Player || coordinatedFrames.has(iframe)) return;
+  coordinatedFrames.add(iframe);
+  const player = new window.YT.Player(iframe, {
+    events: {
+      onStateChange(event) {
+        if (event.data !== window.YT.PlayerState.PLAYING) return;
+        youtubePlayers.forEach((otherPlayer, otherFrame) => {
+          if (otherFrame !== iframe && typeof otherPlayer.pauseVideo === "function") {
+            otherPlayer.pauseVideo();
+          }
+        });
+      }
+    }
+  });
+  youtubePlayers.set(iframe, player);
+}
+
+function coordinateAllYoutubeFrames() {
+  document.querySelectorAll('.video-embed iframe[src*="youtube"]')
+    .forEach(coordinateYoutubeFrame);
+}
+
+window.onYouTubeIframeAPIReady = coordinateAllYoutubeFrames;
+const youtubeApi = document.createElement("script");
+youtubeApi.src = "https://www.youtube.com/iframe_api";
+youtubeApi.async = true;
+document.head.appendChild(youtubeApi);
+
+new MutationObserver(coordinateAllYoutubeFrames).observe(document.body, {
+  childList: true,
+  subtree: true
 });
 
 // Signup form (demo — no backend)
