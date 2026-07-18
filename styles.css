@@ -27,9 +27,10 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 body {
   margin: 0; font-family: var(--font); color: var(--body);
+  width: 100%; max-width: 100%; overflow-x: clip;
   background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
 h1, h2, h3, h4 { color: var(--ink); line-height: 1.14; margin: 0 0 .5em; letter-spacing: -0.02em; }
@@ -41,6 +42,10 @@ a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 
 .container { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+.hero-grid > *, .products > *, .nutri-grid > *, .video-grid > *,
+.social-grid > *, .gallery > *, .benefits > *, .steps > *, .split > *,
+.facts > *, .quotes > *, .review-submit-wrap > *, .footer-grid > * { min-width: 0; }
+.quote, .social-card, .footer-col { overflow-wrap: anywhere; }
 .narrow { max-width: 760px; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); border: 0; }
 
