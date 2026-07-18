@@ -280,6 +280,13 @@ img { max-width: 100%; display: block; }
 .footer-brand .logo { color: #fff; margin-bottom: .8rem; }
 .footer-brand .logo-text span { color: var(--green-500); }
 .footer-brand p { max-width: 30ch; color: #9fb4a7; }
+.social-icons { display: flex; align-items: center; gap: .7rem; margin-top: 1.15rem; }
+.social-icons a { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.18); border-radius: 50%; color: #fff; background: rgba(255,255,255,.08); transition: transform .18s, background .18s, border-color .18s; }
+.social-icons a:hover { transform: translateY(-3px); background: var(--green-600); border-color: var(--green-600); }
+.social-icons svg { width: 22px; height: 22px; fill: currentColor; stroke: currentColor; stroke-width: 1.8; }
+.social-icons svg rect, .social-icons svg circle { fill: none; }
+.social-icons svg .social-dot { fill: currentColor; stroke: none; }
+.social-icons svg .social-play { fill: var(--green-900); stroke: none; }
 .brand-by { display: flex; align-items: center; gap: .7rem; margin-top: 1.1rem; }
 .brand-by span { font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; color: #9fb4a7; font-weight: 600; }
 .brand-by img { height: 46px; width: auto; display: block; }
