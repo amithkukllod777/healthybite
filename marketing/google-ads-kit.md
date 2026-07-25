@@ -139,7 +139,7 @@ Paste into one RSA per ad group. Pin **Headline 1 = flavour/brand** where releva
 **Descriptions (≤90 chars each):**
 1. Chef-crafted paneer meal with 16g protein. Ready to eat in minutes. Order at ₹225.
 2. 100% natural, no preservatives, no vegetable oil. Two bold flavours. Shop online now.
-3. No cooking, no fridge. Shelf-stable 12 months with retort technology. Try Kuddle.
+3. No cooking, no fridge. Shelf-stable 6 months with retort technology. Try Kuddle.
 4. Launch offer ₹225 (MRP ₹477). High-protein ready-to-eat veg meal. Order today.
 
 **Display path:** `/kuddle` `/super-meal`
@@ -158,9 +158,9 @@ Paste into one RSA per ad group. Pin **Headline 1 = flavour/brand** where releva
 | Garlic Paprika ₹225 | 16g protein, ready to eat | Smoky garlic paprika broth | Garlic Paprika URL |
 | Jalapeño ₹225 | 16g protein, ready to eat | Zesty green jalapeño kick | Jalapeño URL |
 | 100% Natural Meal | No preservatives, no veg oil | Real paneer & veggies | Garlic Paprika URL |
-| Ready in 3 Minutes | Heat & eat, no cooking | 12-month shelf life | Jalapeño URL |
+| Ready in 3 Minutes | Heat & eat, no cooking | 6-month shelf life | Jalapeño URL |
 
-**Callouts (≤25):** 16g Protein Per Pack · No Preservatives · Ready in 3 Minutes · 100% Vegetarian · Free From Veg Oil · Launch Price ₹225 · 12-Month Shelf Life
+**Callouts (≤25):** 16g Protein Per Pack · No Preservatives · Ready in 3 Minutes · 100% Vegetarian · Free From Veg Oil · Launch Price ₹225 · 6-Month Shelf Life
 
 **Structured snippets:**
 - Header **Styles**: Garlic Paprika, Jalapeño
